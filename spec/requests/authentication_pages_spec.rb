@@ -35,6 +35,12 @@ describe "Authentication" do
         before { click_link "Sign out" }
         it { should have_link('Sign in') }
       end
+      
+      describe "when signed-in users try to visit new,create action" do
+        before { visit signup_path }
+        
+        it { should_not have_selector('h1', text: 'Sign up')}
+      end
     end
   end
   
@@ -54,10 +60,23 @@ describe "Authentication" do
         describe "after signing in" do
           
          specify { page.should have_selector('title', text: 'Edit user')}
+         
+         describe "when signing in again" do
+           before do
+             delete signout_path
+             visit signin_path
+             fill_in "Email", with: user.email
+             fill_in "Password", with: user.password
+             click_button "Sign in"
+           end
+           
+           specify { page.should have_selector('title', text: user.name) }
+         end 
         end
       end
       
       describe "in the Users controller" do
+               
         describe "visiting the edit page" do
           before { visit edit_user_path(user)}
           it { should have_selector('title',text: 'Sign in') }
@@ -73,6 +92,20 @@ describe "Authentication" do
           it { should have_selector('title',text: 'Sign in')}
         end
       end
+      
+      describe "in the Microposts controller" do
+
+        describe "submitting to the create action" do
+          before { post microposts_path }
+          specify { response.should redirect_to(signin_path) }
+        end
+
+        describe "submitting to the destroy action" do
+          before { delete micropost_path(FactoryGirl.create(:micropost)) }
+          specify { response.should redirect_to(signin_path) }
+        end
+      end
+        
     end
   
     describe "as wrong user" do
