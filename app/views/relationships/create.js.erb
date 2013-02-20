@@ -1,0 +1,5 @@
+$("#follow_form").html("<%= escape_javascript(render('users/unfollow')) %>")
+$("#followers").effect("shake");
+$("#followers").effect("highlight", {}, 3000);
+$(".gravatar").effect("shake");
+$("#followers").html('<%= @user.followers.count %>')
