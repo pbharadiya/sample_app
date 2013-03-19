@@ -6,6 +6,8 @@ gem 'wdm', '~>0.0.3'
 gem 'bcrypt-ruby','3.0.1'
 gem 'faker','1.0.1'
 gem 'will_paginate', '3.0.3'
+gem 'activeadmin'
+gem 'meta_search', '>=1.1.0.pre'
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
@@ -13,6 +15,7 @@ group :development, :test do
   gem 'guard-spork', '1.2.0'
   gem 'spork', '0.9.2'
 end
+
 group :development do
   gem 'annotate', '2.5.0'
 end
