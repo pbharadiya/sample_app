@@ -1,28 +1,24 @@
 <% provide(:title, @user.name) %>
-	<div class="row">
-		<aside class="span4">
-		<section>
-			<%= gravatar_for @user %>
-            <h1><%= @user.name %></h1>
-		</section>
-		<section>
-			<%= render 'shared/stats'%>
-		</section>
-		</aside>
-	
-		<div class="span8">
-			<%= render 'follow_form' if signed_in? %>
-			<% if @user.microposts.any? %>
-			<h3> Microposts(<%= @user.microposts.count %>)</h3>
-			<ol class="microposts">
-			<%= render @microposts %>
-			</ol>
-	
-			<div class="digg_pagination">
-    	    <%= will_paginate @microposts, :container => false %>
-        	</div>
-  
-			<% end %>
-		</div>	
+<div class="row">
+  <aside class="span4">
+    <section>
+      <%= gravatar_for @user %>
+      <h1><%= @user.name %></h1>
+    </section>
+    <section>
+      <%= render 'shared/stats'%>
+    </section>
+  </aside>
+  <div class="span8">
+    <%= render 'follow_form' if signed_in? %>
+    <% if @user.microposts.any? %>
+      <h3> Microposts(<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <div class="digg_pagination">
+        <%= will_paginate @microposts, :container => false %>
+      </div>
+    <% end %>
+  </div>
 </div>
-

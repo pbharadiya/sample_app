@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
 /* universal */
-
 html {
   overflow-y: auto;
 }
@@ -29,7 +28,6 @@ textarea {
 }
 
 /* typography */
-
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
@@ -41,8 +39,8 @@ h1 {
   text-align: center;
 }
 
-h2 {
-  font-size: 1.7em;
+h3 {
+  font-size: 1.3em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
@@ -56,7 +54,6 @@ p {
 }
 
 /* header */
-
 #logo {
   float: left;
   margin-right: 10px;
@@ -75,7 +72,6 @@ p {
 }
 
 /* footer */
-
 footer {
   margin-top: 45px;
   padding-top: 5px;
@@ -114,7 +110,6 @@ $grayMediumLight: #eaeaea;
   box-sizing: border-box;
 }
 /* miscellaneous */
-
 .debug_dump {
   clear: both;
   float: left;
@@ -124,7 +119,6 @@ $grayMediumLight: #eaeaea;
 }
 
 /* sidebar */
-
 aside {
   section {
     padding: 10px 0;
@@ -182,7 +176,6 @@ aside {
 }
 
 /* forms */
-
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
@@ -210,7 +203,6 @@ input {
  
  
 /* users index */
-
 .users {
   list-style: none;
   margin: 0;
@@ -249,12 +241,9 @@ input {
   }
 }
 
-
 /* micropost jQuery countdown */
-
 .countdown {
   display: inline;
   padding-left: 30px;
   color: $grayLight;
 }
-

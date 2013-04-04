@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require microposts
-//= require_tree .
+//= require_tree
 //= require fancybox
+//= require social-share-button

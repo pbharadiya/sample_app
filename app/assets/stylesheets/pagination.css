@@ -2,12 +2,12 @@
   background: white;
   cursor: default;
   /* self-clearing method: */ }
-  .digg_pagination a, .digg_pagination span, .digg_pagination em {
+.digg_pagination a, .digg_pagination span, .digg_pagination em {
     padding: 0.2em 0.5em;
     display: block;
     float: left;
     margin-right: 1px; }
-  .digg_pagination .disabled {
+.digg_pagination .disabled {
     color: #999999;
     border: 1px solid #dddddd; }
   .digg_pagination .current {
@@ -30,7 +30,7 @@
     width: 22em;
     margin-bottom: 0.3em;
     text-align: center; }
-    .digg_pagination .page_info b {
+  .digg_pagination .page_info b {
       color: #000033;
       background: #6aa6ed;
       padding: 0.1em 0.25em; }

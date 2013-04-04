@@ -9,7 +9,6 @@ class UsersController < ApplicationController
     else
     redirect_to root_path
     end
-   # @user = User.new
   end
   
   def index
@@ -22,25 +21,20 @@ class UsersController < ApplicationController
   end
   
   def create
-    
-      @user = User.new(params[:user])
-    
-      if @user.save
-        sign_in @user
-        flash[:success] = "Welcome to the Sample App!"
-        redirect_to @user
-      else
-        render 'new'
-      end
-    
+    @user = User.new(params[:user])
+    if @user.save
+      sign_in @user
+      flash[:success] = "Welcome to the Sample App!"
+      redirect_to @user
+    else
+      render 'new'
+    end
   end
   
   def edit
-   # @user = User.find(params[:id])
   end
   
   def update
-    #@user = User.find_by_id(params[:id])
     if @user.update_attributes(params[:user])
       flash[:success] = "Profile Updated"
       sign_in @user
