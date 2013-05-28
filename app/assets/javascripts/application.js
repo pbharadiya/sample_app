@@ -16,4 +16,3 @@
 //= require microposts
 //= require_tree
 //= require fancybox
-//= require social-share-button
