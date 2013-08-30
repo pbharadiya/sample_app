@@ -6,6 +6,10 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "active_resource/railtie"
 require "sprockets/railtie"
+
+#CSV-Excel implementation
+require "csv"
+require "rails/all"
 # require "rails/test_unit/railtie"
 
 if defined?(Bundler)

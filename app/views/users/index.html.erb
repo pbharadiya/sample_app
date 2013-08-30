@@ -4,6 +4,11 @@
   <%= will_paginate %>
 </div>
 <ul class="users">
+  <p>
+    Download:
+    <%= link_to "CSV", users_path(format: "csv") %> |
+    <%= link_to "Excel", users_path(format: "xls") %>
+    </p>
   <%= render @users %>
 </ul>
 <div class="digg_pagination">
