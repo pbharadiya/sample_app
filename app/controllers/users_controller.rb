@@ -74,10 +74,20 @@ class UsersController < ApplicationController
   end
 
   def followers
-      @title = "Followers"
-      @user = User.find(params[:id])
-      @users = @user.followers.paginate(page: params[:page])
-      render 'show_follow'
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers.paginate(page: params[:page])
+    render 'show_follow'
+  end
+
+  def import
+    #User.import(params[:file])
+    CSV.foreach(params[:file].path, headers: true) do |row|
+      @user = User.new row.to_hash
+      @user.save
+    end
+    flash[:success] = "Users imported!"
+    redirect_to users_path
   end
 
   private
